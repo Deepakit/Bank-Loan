@@ -1,4 +1,4 @@
-# Bank Loan Default Case
+# [Bank Loan Default Case](https://github.com/Deepakit/Bank-Loan/blob/main/Bank_loan%20Default.ipynb)
 Loan default will cause huge loss for the banks,so they pay a lot of attention on the same 
 issue and apply various method to detect and predict default behaviours of their customers.
 
@@ -100,7 +100,7 @@ In machine learning, confusion matrix is one of the easiest ways to summarize th
 2)	Receiver operating characteristics (ROC)_Area under curve(AUC) Score:
 It is a metric that computes the area under the Roc curve and also used metric for imbalanced data. Roc curve is plotted true positive rate or Recall on y axis against false  positive rate or specificity on x axis. The larger the area under the roc curve better the performance of the model.
 
-## Threshold
+## [Threshold](https://github.com/Deepakit/Bank-Loan/blob/main/Logistic%20Regression_threshold_selection.ipynb)
 * By default, logistic regression have the threshold of 0.5 to assign the probabilities to 1 or 0.To improve the recall of the model, we can use the probabilities predicted by the the model and set threshold ourselves.The threshold is based on different factors and objectives. Here for bank, they want to control the loss to an acceptable level so the threshold can be set to low value,so more customers will be grouped as “potential bad customers” and their profile can be checked so that bank does not incur any losses.
 * To set the threshold we will use .predict_proba() function, also our aim would be to find a balance between sensitivity and specificity. For this purpose we will use F1 score which is a harmonic mean of them and will try to maximize the F1 score.
 * We will test the F1 score with different threshold value and store them in a list and find the maximum F1 score and its corresponding index.
