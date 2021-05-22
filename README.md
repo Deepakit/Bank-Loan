@@ -18,41 +18,41 @@ A look at the data
 We take a look at the data provided to us by organizing,plotting and summarizing data. By doing this, we can get a idea about the distribution and pattern present in the data.
 
 ### Target Distribution
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/target.png)
+![](/Image/target.png)
 We see that there is a imbalance data present but here we are classifying for loan default which is meant to be low.
 
 ### Missing Value
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/missing.png)
+![](/Image/missing.png)
  We see that our target variable have 150 missing values. Here we cannot fill these values by our traditional method because if target value is assigned a wrong value then it will effect our model predictions.
 To resolve this we will create a new dataframe where we will store only the null entries and remove those entries from our main dataframe.
 
 ### Outlier Analysis
 We will perform box plot on our features to estimate the number of outliers present in our data.
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/outlier.png)
+![](/Image/outlier.png)
 We found that apart from ‘age’, every feature have got outliers. But for education(ed) and emply feature which are although numeric seems to categorical in nature removing outliers for them does not seems to be best idea.
 Also, for features like income,debtinc and similar we cannot remove their ouliers because for our particular scenario bank would like to have the different records of different users. So our model will require to handle different data altogether so we will not be removing outliers here.
 
 ### Data distribution
 We plot a distplot to observe the distribution of our data.
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist1.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist2.png)
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist3.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist4.png)
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist5.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist6.png)
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist7.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/dist.png)
+![](/Image/dist1.png)![](/Image/dist2.png)
+![](/Image/dist3.png)![](/Image/dist4.png)
+![](/Image/dist5.png)![](/Image/dist6.png)
+![](/Image/dist7.png)![](/Image/dist.png)
 All independent variables are rightly skewed.
 
 ### Independent Relation
 We plot a crosstab to visualize the relation ship of ,’ed’,’employ’,’age’ features with our target variable.
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/ind_relation.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/ind_rel2.png)
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/ind_rel3.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/ind_rel4.png)
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/ind_rel5.png)
+![](/Image/ind_relation.png)![](/Image/ind_rel2.png)
+![](/Image/ind_rel3.png)![](/Image/ind_rel4.png)
+![](/Image/ind_rel5.png)
 We observe that  after value of employ reach to 17 absolutely no loan is defaulted. Also, chance of loan being defaulted is greater when employ is at initial stage.
 Similarly, here for a person with educational qualification as 1 has very less chance of loan getting defaulted.Also, other groups have similar distribution.For employee with highest employee experience we have zero records of loan getting defaulted.
 Chances of loan getting defalut is greater when a person is younger. This also emphasise our previous assumption for employee experience because when a person has high number of years of experience his/her age will also tend to be greater.
 
 ### Scatter plots
 We plot scatter plots for ‘debtinc’,’income’,’creddebt’,’othdebt’ with our target variable to understand whether there is any pattern involved.
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/scatter_1.png)![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/scatter_2.png)
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/scatter_3.png)
+![](/Image/scatter_1.png)![](/Image/scatter_2.png)
+![](/Image/scatter_3.png)
 For income we observe that as income increase less loan gets defaulted and as all other debt gets increase more loans gets defaulted, from which we can infer that there might be a linear relationship.
 To make sure our assumption is correct we calculate the mean of our independent features by grouping on the target variable
 
@@ -62,7 +62,7 @@ To make sure our assumption is correct we calculate the mean of our independent 
  ```python
  df.corr()
  ```
- ![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/multi_coll.png)
+ ![](/Image/multi_coll.png)
  
  We will droping the, 'address' feature because it is not revealing as much information also it is not strongly correlated.
 One idea was to combine debtinc and othdebt features but the correlation is not that strong between them.
@@ -95,7 +95,7 @@ Now, we have a three models for predicting the target variable, but we need to d
 In this project, we are using two metrics for model evaluation as follows:
 1)	Confusion Matrix:
 In machine learning, confusion matrix is one of the easiest ways to summarize the performance of your algorithm. At times, it is difficult to judge the accuracy of a model by just looking at the accuracy because of problems like unequal distribution. So, a better way to check how good your model is, is to use a confusion matrix.
-![](https://github.com/Deepakit/Bank-Loan/blob/main/Image/conf.png)
+![](/Image/conf.png)
 
 2)	Receiver operating characteristics (ROC)_Area under curve(AUC) Score:
 It is a metric that computes the area under the Roc curve and also used metric for imbalanced data. Roc curve is plotted true positive rate or Recall on y axis against false  positive rate or specificity on x axis. The larger the area under the roc curve better the performance of the model.
